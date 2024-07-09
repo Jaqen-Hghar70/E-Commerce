@@ -1,0 +1,195 @@
+/* body{
+  background-color: pink;
+} */
+.navbar {
+  height: 5rem;
+  background-color: white !important;
+}
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+.nav-link {
+  color: #222222 !important;
+  font-weight: bold !important;
+}
+
+/* //footer design */
+.f-info-links a {
+  color: #222222;
+  text-decoration: none !important;
+}
+.f-info-links a:hover {
+  text-decoration: underline !important;
+}
+.f-info-links  {
+  width: 100%;
+  margin-right: 8px !important;
+  margin-bottom: 0%;
+}
+.f-socials{
+  width: 100%;
+}
+.f-info {
+  text-align: center !important;
+  display: flex !important;
+  background-color: #ebebeb;
+  height: 8rem !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  align-items: space-evenly !important;
+}
+
+.f-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 5px;
+}
+/* card styling */
+.card{
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;;
+}
+.card-body{
+  padding: 0;
+}
+.card-text p {
+  font-family: 400 !important;
+}
+.link{
+  text-decoration: none !important;
+}
+/* for overlayeffect */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-container {
+  position: relative;
+}
+
+.card-img-top {
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay .overlay-content {
+  padding: 1rem;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.link:hover .card-img-top {
+  opacity: 0.8;
+}
+/* styling add new listing */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Light background color for contrast */
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.listing-form {
+  max-width: 600px; /* Decrease the form width */
+  margin: 0 auto;  /* Center the form */
+  padding: 1rem;   /* Add some padding */
+  background-color: #fff; /* White background color for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-group {
+  margin-bottom: 1rem; /* Space between form groups */
+}
+
+.form-group label {
+  display: block;  /* Block display for labels */
+  font-weight: bold; /* Bold text for labels */
+  margin-bottom: 0.5rem; /* Space below labels */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;  /* Full width of the container */
+  padding: 0.75rem; /* Padding inside input and textarea */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 70px; /* Minimum height for textareas */
+}
+
+#add {
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove default border */
+  padding: 0.75rem 1.5rem; /* Button padding */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1rem; /* Font size for the button */
+}
+
+#add:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+/* show page styling */
+.show-image {
+  height: 30vh;
+}
+.btn{
+  display: flex;
+}
+.show-card{
+  padding-left: 0;
+  padding-right:0 ;
+}

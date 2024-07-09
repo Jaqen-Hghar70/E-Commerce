@@ -1,0 +1,100 @@
+<%- layout("layouts/boilerplate") %>
+<head>
+  <style>
+    /* .show-image {
+      max-width: 100%;
+      height: auto;
+    } */
+  
+    .card {
+      margin-bottom: 1rem;
+    }
+  
+    .btn-container {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  
+    .edit-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #dc3545; /* Red color */
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+  
+    .edit-btn:hover {
+      background-color: #c82333; /* Darker red */
+    }
+  
+    .delete-form {
+      display: inline;
+    }
+  
+    .delete-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #343a40; /* Black color */
+      color: #fff;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  
+    .delete-btn:hover {
+      background-color: #23272b; /* Darker black */
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="row">
+    <div class="col-8 offset-3">
+      <h3>Listing Details:</h3>
+    </div>
+    <div class="col-6 offset-3 show-card">
+      <div class="card">
+        <img
+          src="<%= listing.image %>"
+          alt="Listing_image"
+          class="show-image"
+        />
+        <div class="card-body">
+          <p class="card-text"><strong>Title:</strong> <%= listing.title %></p>
+          <p class="card-text">
+            <strong>Description:</strong> <%= listing.description %>
+          </p>
+          <p class="card-text">
+            <strong>Price:</strong> &#8377; <%= listing.price.toLocaleString('en-IN') %>
+          </p>
+          <p class="card-text">
+            <strong>Location:</strong> <%= listing.location %>
+          </p>
+          <p class="card-text">
+            <strong>Country:</strong> <%= listing.country %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-container">
+    <a
+      href="/listing/<%= listing._id %>/edit"
+      class="edit-btn"
+    >Edit</a>
+
+    <form
+      method="POST"
+      action="/listing/<%= listing.id %>?_method=DELETE"
+      class="delete-form"
+    >
+      <button type="submit" class="delete-btn">Delete</button>
+    </form>
+  </div>
+</body>

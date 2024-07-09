@@ -1,0 +1,104 @@
+<%- layout("layouts/boilerplate") %>
+<head>
+  <style>
+    body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Light background color for contrast */
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.update-form {
+  max-width: 500px; /* Width of the form */
+  margin: 0 auto;  /* Center the form */
+  padding: 1rem;   /* Padding inside the form */
+  background-color: #fff; /* White background color for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 2rem; /* Space between the form and footer */
+}
+
+.form-group {
+  margin-bottom: 0.75rem; /* Space between form groups */
+}
+
+.form-label {
+  display: block;  /* Block display for labels */
+  font-weight: bold; /* Bold text for labels */
+  margin-bottom: 0.5rem; /* Space below labels */
+}
+
+.form-input,
+.form-textarea,
+.form-file {
+  width: 100%;  /* Full width of the container */
+  padding: 0.5rem; /* Reduced padding inside input and textarea */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.form-textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px; /* Reduced minimum height for textareas */
+}
+
+.submit-button {
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove default border */
+  padding: 0.5rem 1.5rem; /* Reduced padding for the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 0.875rem; /* Slightly smaller font size for the button */
+  margin-top: 1rem; /* Space above the button */
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+  </style>
+</head>
+<body>
+  <h3>Create New Listing</h3>
+  <form method="POST" action="/listing/<%= listing.id %>?_method=PUT" class="update-form">
+    <div class="form-group">
+      <label for="title" class="form-label">Title:</label><br>
+      <input type="text" id="title" name="listing[title]" placeholder="Enter title" value="<%= listing.title %>" class="form-input" required><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="description" class="form-label">Description:</label><br>
+      <textarea id="description" name="listing[description]" placeholder="Enter description" class="form-textarea" required><%= listing.description %></textarea><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="country" class="form-label">Country:</label><br>
+      <input type="text" id="country" name="listing[country]" placeholder="Enter Country name" value="<%= listing.country %>" class="form-input" required><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="location" class="form-label">Location:</label><br>
+      <input type="text" id="location" name="listing[location]" placeholder="Enter location" value="<%= listing.location %>" class="form-input" required><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="price" class="form-label">Price:</label><br>
+      <input type="number" id="price" name="listing[price]" placeholder="Enter price" value="<%= listing.price %>" class="form-input" required><br>
+    </div>
+    
+    <div class="form-group">
+      <label for="image" class="form-label">Image:</label><br>
+      <input type="text" id="image" name="listing[image]"  class="form-file" placeholder="Enter img src/url here" value="<%= listing.image %>"><br>
+    </div>
+    
+    <button type="submit" class="submit-button">Update</button>
+  </form>
+</body>
